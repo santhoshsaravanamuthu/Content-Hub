@@ -6,6 +6,7 @@ import { categories } from '../../constants/data';
 
 const StyledTable = styled(Table)`
     border: 1px solid rgba(224, 224, 224, 1);
+    background-color:white;
 `;
     
 const StyledButton = styled(Button)`

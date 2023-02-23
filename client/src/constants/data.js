@@ -7,4 +7,6 @@ export const categories = [
     { id: 6, type: "Lifestyle" },
     { id: 7, type: "Education" },
     { id: 8, type: "Political" },
+    { id: 9, type: "ShareMarket" },
+    { id: 10, type: "Automotive" },
 ];

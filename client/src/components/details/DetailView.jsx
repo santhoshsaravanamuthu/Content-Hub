@@ -16,11 +16,12 @@ const Container = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         margin: 0
     },
+    backgroundcolor:'white'
 }));
 
 const Image = styled('img')({
     width: '100%',
-    height: '50vh',
+    height: '75%',
     objectFit: 'cover'
 });
 

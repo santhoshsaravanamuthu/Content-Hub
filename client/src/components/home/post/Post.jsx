@@ -6,11 +6,11 @@ const Container = styled(Box)`
     border-radius: 10px;
     margin: 10px;
     display: flex;
-    align-items: center;
+    background-color:white;
     flex-direction: column;
-    height: 350px;
+    height: 300px;
     & > img, & > p {
-        padding: 0 5px 5px 5px;
+        
     }
 `;
 
@@ -22,18 +22,26 @@ const Image = styled('img')({
 });
 
 const Text = styled(Typography)`
-    color: #878787
+    color: #878787,
+    display:flex;
+    align-items: 'center',
     font-size: 12px;
+    margin-left:10px;
+    
 `;
 
 const Heading = styled(Typography)`
     font-size: 18px;
+    align-item:'center';
+    margin-left:10px;
     font-weight: 600
 `;
 
 const Details = styled(Typography)`
     font-size: 14px;
     word-break: break-word;
+    margin-left:10px;
+    align-items: 'center';
 `;
 
 const Post = ({ post }) => {
@@ -45,12 +53,15 @@ const Post = ({ post }) => {
 
     return (
         <Container>
-            <Image src={url} alt="post" />
-            <Text>{post.categories}</Text>
-            <Heading>{addEllipsis(post.title, 20)}</Heading>
-            <Text>Author: {post.username}</Text>
-            <Details>{addEllipsis(post.description, 100)}</Details>
+                <Image src={url} alt="post" />
+                <Text>{post.categories}</Text>
+                <Heading>{addEllipsis(post.title, 20)}</Heading>
+                <Text>Author: {post.username}</Text>
+                <Details>{addEllipsis(post.description, 100)}</Details>
         </Container>
+        
+            
+        
     )
 }
 

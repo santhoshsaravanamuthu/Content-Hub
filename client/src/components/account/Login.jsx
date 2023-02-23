@@ -61,6 +61,10 @@ const Error = styled(Typography)`
     margin-top: 10px;
     font-weight: 600;
 `
+const Container=styled(Box)`
+    background-color=#de7d36,
+    width:200%
+`
 
 const loginInitialValues = {
     username: '',
@@ -129,33 +133,35 @@ const Login = ({ isUserAuthenticated }) => {
     }
 
     return (
-        <Component>
-            <Box>
-                <Image src={imageURL} alt="blog" />
-                {
-                    account === 'login' ?
-                        <Wrapper>
-                            <TextField variant="standard" value={login.username} onChange={(e) => onValueChange(e)} name='username' label='Enter Username' />
-                            <TextField variant="standard" value={login.password} onChange={(e) => onValueChange(e)} name='password' type='password' label='Enter Password' />
+        <Container>
+            <Component>
+                <Box>
+                    <Image src={imageURL} alt="blog" />
+                    {
+                        account === 'login' ?
+                            <Wrapper>
+                                <TextField variant="standard" value={login.username} onChange={(e) => onValueChange(e)} name='username' label='Enter Username' />
+                                <TextField variant="standard" value={login.password} onChange={(e) => onValueChange(e)} name='password' type='password' label='Enter Password' />
 
-                            {error && <Error>{error}</Error>}
+                                {error && <Error>{error}</Error>}
 
-                            <LoginButton variant="contained" onClick={() => loginUser()} >Login</LoginButton>
-                            <Text style={{ textAlign: 'center' }}>OR</Text>
-                            <SignupButton onClick={() => toggleSignup()} style={{ marginBottom: 50 }}>Create an account</SignupButton>
-                        </Wrapper> :
-                        <Wrapper>
-                            <TextField variant="standard" onChange={(e) => onInputChange(e)} name='name' placeholder='Enter Email_id' />
-                            <TextField variant="standard" onChange={(e) => onInputChange(e)} name='username' placeholder='Enter Username' />
-                            <TextField variant="standard" onChange={(e) => onInputChange(e)} name='password' placeholder='Enter Password' />
+                                <LoginButton variant="contained" onClick={() => loginUser()} >Login</LoginButton>
+                                <Text style={{ textAlign: 'center' }}>OR</Text>
+                                <SignupButton onClick={() => toggleSignup()} style={{ marginBottom: 50 }}>Create an account</SignupButton>
+                            </Wrapper> :
+                            <Wrapper>
+                                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='name' placeholder='Enter Email_id' />
+                                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='username' placeholder='Enter Username' />
+                                <TextField variant="standard" onChange={(e) => onInputChange(e)} name='password' placeholder='Enter Password' />
 
-                            <SignupButton onClick={() => signupUser()} >Signup</SignupButton>
-                            <Text style={{ textAlign: 'center' }}>OR</Text>
-                            <LoginButton variant="contained" onClick={() => toggleSignup()}>Already have an account</LoginButton>
-                        </Wrapper>
-                }
-            </Box>
-        </Component>
+                                <SignupButton onClick={() => signupUser()} >Signup</SignupButton>
+                                <Text style={{ textAlign: 'center' }}>OR</Text>
+                                <LoginButton variant="contained" onClick={() => toggleSignup()}>Already have an account</LoginButton>
+                            </Wrapper>
+                    }
+                </Box>
+            </Component>
+        </Container>
     )
 }
 
