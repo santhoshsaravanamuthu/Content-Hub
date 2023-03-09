@@ -3,15 +3,8 @@ import { AppBar, Toolbar, styled} from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-const darkTheme = createTheme({
-    palette: {
-      mode: 'dark',
-    },
-  });
-
-
 const Component = styled(AppBar)`
-    background: #FFFFFF;
+    background: #0D263B;
     color: black;
 `;
 
@@ -26,7 +19,6 @@ const Container = styled(Toolbar)`
 
 const Header = () => {
     return (
-        <ThemeProvider theme={darkTheme}>
             <Component>
                 <Container>
                     <Link to='/'>HOME</Link>
@@ -35,7 +27,6 @@ const Header = () => {
                     <Link to='/account'>LOGOUT</Link>
                 </Container>
             </Component>
-        </ThemeProvider>
     )
 }
 
